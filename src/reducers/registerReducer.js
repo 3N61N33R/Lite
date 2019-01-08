@@ -7,6 +7,7 @@ export const initialState = {
 };
 
 export default (state = initialState, action) => {
+  console.log('hgfjhg', action);
   switch (action.type) {
     case REGISTER_SUCCESSFUL:
       return {

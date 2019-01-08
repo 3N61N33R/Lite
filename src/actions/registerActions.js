@@ -15,14 +15,15 @@ export const registerFailed = error => ({
 });
 
 export const registerUser = user => (dispatch) => {
-  axios.post(url, { ...user }).then((res) => {
-    console.log('URL', user);
-    console.log('URL', res);
-    if (res.status === 201) {
-      dispatch(registerSuccessful()).catch((error) => {
-        console.log(error);
-        dispatch(registerFailed(error));
-      });
-    }
-  });
+  axios
+    .post(url, { ...user })
+    .then((res) => {
+      if (res.status === 201) {
+        dispatch(registerSuccessful());
+        history.push('/');
+      }
+    })
+    .catch((error) => {
+      dispatch(registerFailed(error));
+    });
 };

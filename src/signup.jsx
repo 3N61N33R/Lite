@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { registerUser } from "./actions/registerActions";
 import "./App.css";
+import Message from "./message";
 
 class Signup extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class Signup extends Component {
     registerUser(user);
   }
   render() {
+    const { visible, message, success } = this.props;
     return (
       <div>
         <div className="-container">
@@ -56,50 +58,58 @@ class Signup extends Component {
             <div id="alert-message" className="alert" />
             <div className="form-parameters">
               <h3 className="form-title">Sign Up</h3>
+              {visible && (
+                <Message
+                  visible={visible}
+                  message={message}
+                  success={success}
+                />
+              )}
+
               <div className="field">
                 <input
+                  required
                   type="text"
                   placeholder="First Name"
                   name="firstname"
-                  required
                   onChange={this.handleChange}
                 />
               </div>
               <div className="field">
                 <input
+                  required
                   type="text"
                   placeholder="Last Name"
                   name="lastname"
-                  required
                   onChange={this.handleChange}
                 />
               </div>
 
               <div className="field">
                 <input
+                  required
                   type="text"
                   placeholder="Enter email address"
                   name="email"
-                  required
                   onChange={this.handleChange}
                 />
               </div>
 
               <div className="field">
                 <input
+                  required
                   type="password"
                   placeholder="Enter Password"
                   name="password"
-                  required
                   onChange={this.handleChange}
                 />
               </div>
               <div className="field">
                 <input
+                  required
                   type="password"
                   placeholder="Confirm password"
                   name="confirmpassword"
-                  required
                   onChange={this.handleChange}
                 />
               </div>
@@ -109,7 +119,6 @@ class Signup extends Component {
                     <b>Sign up</b>
                   </span>
                 </button>
-
                 <hr />
 
                 <div>
@@ -130,7 +139,6 @@ class Signup extends Component {
 const mapStateToProps = state => ({
   visible: state.registerReducer.visible,
   message: state.registerReducer.message,
-  message2: state.registerReducer.message2,
   success: state.registerReducer.success
 });
 
