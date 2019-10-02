@@ -1,5 +1,5 @@
 {
-  "name": "react-webpack",
+  "name": "lite",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,6 +27,7 @@
     "react-redux": "^6.0.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "react-webpack": "^0.4.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
     "redux-thunk": "^2.3.0",
@@ -36,11 +37,13 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "acorn": "^7.1.0",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
-    "html-webpack-plugin": "^3.2.0"
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3"
   }
 }
